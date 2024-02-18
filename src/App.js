@@ -27,8 +27,7 @@ function App() {
   const [onSuccessfulSave, setOnSuccessfulSave] = useState(false);
 
   const fetchExpenses = async () => {
-    const apiUrl = "https://francisolano.onrender.com";
-
+    const apiUrl = process.env.REACT_APP_API_URL;
     const endpoint = `${apiUrl}/api/expenses`;
 
     const response = await fetch(endpoint);
@@ -44,7 +43,7 @@ function App() {
   const saveExpense = async (event) => {
     event.preventDefault();
 
-    const apiUrl = "https://francisolano.onrender.com";
+    const apiUrl = process.env.REACT_APP_API_URL;
 
     const endpoint = `${apiUrl}/api/expenses`;
 
